@@ -1,66 +1,129 @@
-# Sanskrit Automatic Speech Recognition (ASR) System
+# 🎙 Sanskrit Automatic Speech Recognition (ASR)
 
-This project implements an Automatic Speech Recognition (ASR) system for the **Sanskrit language**, designed to convert spoken Sanskrit into text with high accuracy. The system is built using deep learning models and advanced speech processing techniques to handle low-resource languages like Sanskrit.
+[![Language](https://img.shields.io/badge/Language-Sanskrit-orange)]
+[![Framework](https://img.shields.io/badge/Framework-TensorFlow-blue)]
+[![Architecture](https://img.shields.io/badge/Model-CNN--RNN--CTC-purple)]
+[![Task](https://img.shields.io/badge/Task-Speech%20Recognition-green)]
 
-## Table of Contents
-- [Objective](#objective)
-- [Features](#features)
-- [Technology Stack](#technology-stack)
-- [Dataset](#dataset)
-- [Model Architecture](#model-architecture)
-- [Results](#results)
-- [Challenges](#challenges)
-- [Future Work](#future-work)
-- [Contributors](#contributors)
+An end-to-end Automatic Speech Recognition (ASR) system designed to convert spoken Sanskrit into text, built to address challenges in low-resource language modeling.
 
-## Objective
-The goal of this project is to facilitate the transcription of spoken Sanskrit into text, enabling the preservation and promotion of Sanskrit language and culture, while also making it accessible to researchers, educators, and students.
+---
 
-## Features
-- Converts spoken Sanskrit into text with high accuracy.
-- Supports diverse dialects and accents in the Sanskrit language.
-- Feature extraction using **Mel-frequency cepstral coefficients (MFCCs)**.
-- End-to-end ASR model using **CNN** and **RNN** with **CTC loss** for speech-to-text conversion.
+## 🚀 Project Overview
 
-## Technology Stack
-- **Programming Language**: Python
-- **Deep Learning Framework**: TensorFlow, Keras
-- **Feature Extraction**: MFCCs
-- **Model**: Convolutional Neural Network (CNN), Recurrent Neural Network (RNN)
-- **Loss Function**: Connectionist Temporal Classification (CTC)
-- **Evaluation Metrics**: Word Error Rate (WER)
+This project implements a structured ASR pipeline for Sanskrit speech, combining signal processing techniques with deep learning architectures to achieve robust transcription performance across diverse speakers and accents.
 
-## Dataset
-The model was trained on a dataset consisting of **78 hours** of Sanskrit speech collected from **27 speakers**. The dataset covers a wide range of dialects and accents, making it versatile for various Sanskrit-speaking populations.
+### Key Highlights
 
-- **Speakers**: 20 male and 7 female
-- **Native languages of speakers**: Hindi, Tamil, Kannada, Malayalam, etc.
-- **Corpus size**: 46,000 sentences
+- 📀 Preprocessed **78 hours** of Sanskrit speech
+- 🗣 46,000 sentences from **27 speakers**
+- 🧠 CNN–RNN architecture with CTC loss
+- 📉 Reduced Word Error Rate (WER) from **44% → 2%** using augmentation
+- 🔊 Built preprocessing pipelines for accent & dialect variability
 
-## Model Architecture
-1. **Feature Extraction**: MFCC features were extracted from the speech data.
-2. **Model**:
-   - A **Convolutional Neural Network (CNN)** layer was used for feature extraction.
-   - Followed by a **Recurrent Neural Network (RNN)** layer to capture temporal dependencies.
-   - The **CTC Loss Function** was used to handle unaligned sequences between the audio input and the corresponding text.
+---
 
-## Results
-- **Word Error Rate (WER)**: The ASR system achieved a **0.44 WER** (44%) on the test dataset, indicating moderate accuracy with room for further improvement.
-- The best WER achieved was **0.02** using data augmentation techniques.
+## 🧠 System Architecture
+```
+Raw Audio
+↓
+MFCC Feature Extraction
+↓
+CNN (Local Feature Learning)
+↓
+RNN (Temporal Modeling)
+↓
+CTC Loss
+↓
+Text Transcription
+```
+---
 
-## Challenges
-- **Low-Resource Language**: Sanskrit is a low-resource language, which made it difficult to gather sufficient data for training.
-- **Diverse Accents**: Accounting for multiple dialects and accents required careful tuning of the model.
+### Model Components
 
-## Future Work
-- Implement **language models** to further improve transcription accuracy.
-- Apply advanced techniques such as **Speed Perturbation** and **Spec Augmentation** to enhance model robustness.
-- Extend the system to support **real-time transcription** for Sanskrit speech.
+- **Feature Extraction:** MFCCs  
+- **CNN:** Captures local acoustic patterns  
+- **RNN:** Models temporal dependencies in speech  
+- **CTC Loss:** Handles unaligned input-output sequences  
 
-## Contributors
-- **Jayesh Bafana**
-- **Bijal Bharadva**
-- **Jay Chaudhari**
-- **Pranav Dave**
-- **Vinit Jha**
-- **Jaanvi Nambiar**
+---
+
+## 📊 Dataset
+
+- **Total Audio:** 78 hours  
+- **Sentences:** 46,000  
+- **Speakers:** 27  
+  - 20 male  
+  - 7 female  
+- Native languages: Hindi, Tamil, Kannada, Malayalam, and others  
+
+The dataset was curated to include accent and dialect diversity to improve generalization.
+
+---
+
+## 📈 Results
+
+| Metric | Value |
+|--------|--------|
+| Baseline WER | 44% |
+| Best WER (with augmentation) | 2% |
+
+Data augmentation techniques significantly improved model robustness across speaker variability.
+
+---
+
+## 🛠 Technology Stack
+
+- Python  
+- TensorFlow / Keras  
+- MFCC Feature Extraction  
+- CNN + RNN Architecture  
+- Connectionist Temporal Classification (CTC) Loss  
+- Evaluation via Word Error Rate (WER)  
+
+---
+
+## 🔧 Engineering Contributions
+
+- Designed structured preprocessing pipeline  
+- Built MP3 → WAV conversion workflow  
+- Implemented stereo → mono normalization  
+- Tuned CNN–RNN architecture for low-resource conditions  
+- Applied augmentation techniques to reduce WER  
+- Evaluated across multiple dialect groups  
+
+---
+
+## ⚠️ Challenges Addressed
+
+### Low-Resource Language
+Limited publicly available Sanskrit speech data required careful dataset construction and preprocessing.
+
+### Accent & Dialect Variability
+Model tuning and preprocessing adjustments were required to generalize across speakers with different native language backgrounds.
+
+---
+
+## 🔮 Future Improvements
+
+- Integrate language models for contextual correction  
+- Apply SpecAugment & speed perturbation  
+- Build real-time inference API  
+- Deploy as a scalable transcription service  
+
+---
+
+## 👥 Contributors
+
+- Jayesh Bafana  
+- Bijal Bharadva  
+- Jay Chaudhari  
+- Pranav Dave  
+- Vinit Jha  
+- Jaanvi Nambiar  
+
+---
+
+### Built to advance speech recognition for low-resource languages.
+
+
