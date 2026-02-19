@@ -18,7 +18,7 @@ This project implements a structured ASR pipeline for Sanskrit speech, combining
 - 📀 Preprocessed **78 hours** of Sanskrit speech
 - 🗣 46,000 sentences from **27 speakers**
 - 🧠 CNN–RNN architecture with CTC loss
-- 📉 Reduced Word Error Rate (WER) from **44% → 2%** using augmentation
+- 📉 Achieved **7.64% Word Error Rate (WER)** on the evaluation corpus using an end-to-end CNN–RNN–CTC architecture.
 - 🔊 Built preprocessing pipelines for accent & dialect variability
 
 ---
